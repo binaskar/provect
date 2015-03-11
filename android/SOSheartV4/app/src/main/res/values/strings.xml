@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SOSheartV4</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="title_activity_patient_list">PatientListActivity</string>
+    <string name="title_activity_patient_state">PatientStateActivity</string>
+    <string name="title_activity_tips">TipsActivity</string>
+</resources>
