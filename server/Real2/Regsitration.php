@@ -38,7 +38,7 @@
         
         
         //A Checker for Records Duplication
-        if(!mysql_query($quieyCheckCT)||!msql_query($quiryCheckP)){
+        if(!mysql_query($quieyCheckCT)){
             $response["success"] = 0;
             $response["message"] = "User name is already exist";
             echo json_encode($response);
