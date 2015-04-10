@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F42F09DD1AD58F3C004E996C /* QRSDET.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F42F09DC1AD58F3C004E996C /* QRSDET.CPP */; };
+		F430E8C01AD0838000C4B1CE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F430E8BF1AD0838000C4B1CE /* main.cpp */; };
+		F430E8C81AD083F800C4B1CE /* ArrhythmiaClassification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F430E8C61AD083F800C4B1CE /* ArrhythmiaClassification.cpp */; };
+		F430E8CB1AD0843A00C4B1CE /* PwaveDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */; };
+		F435EE8C1AD15FFA0060CBF1 /* fileHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F430E8BA1AD0838000C4B1CE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F42F09DC1AD58F3C004E996C /* QRSDET.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QRSDET.CPP; sourceTree = "<group>"; };
+		F430E8BC1AD0838000C4B1CE /* ArrhythmiaDetection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ArrhythmiaDetection; sourceTree = BUILT_PRODUCTS_DIR; };
+		F430E8BF1AD0838000C4B1CE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F430E8C61AD083F800C4B1CE /* ArrhythmiaClassification.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArrhythmiaClassification.cpp; sourceTree = "<group>"; };
+		F430E8C71AD083F800C4B1CE /* ArrhythmiaClassification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrhythmiaClassification.h; sourceTree = "<group>"; };
+		F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PwaveDetection.cpp; sourceTree = "<group>"; };
+		F430E8CA1AD0843A00C4B1CE /* PwaveDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwaveDetection.h; sourceTree = "<group>"; };
+		F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileHandling.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F430E8B91AD0838000C4B1CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F430E8B31AD0838000C4B1CE = {
+			isa = PBXGroup;
+			children = (
+				F430E8BE1AD0838000C4B1CE /* ArrhythmiaDetection */,
+				F430E8BD1AD0838000C4B1CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F430E8BD1AD0838000C4B1CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F430E8BC1AD0838000C4B1CE /* ArrhythmiaDetection */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F430E8BE1AD0838000C4B1CE /* ArrhythmiaDetection */ = {
+			isa = PBXGroup;
+			children = (
+				F430E8BF1AD0838000C4B1CE /* main.cpp */,
+				F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */,
+				F430E8C61AD083F800C4B1CE /* ArrhythmiaClassification.cpp */,
+				F430E8C71AD083F800C4B1CE /* ArrhythmiaClassification.h */,
+				F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */,
+				F430E8CA1AD0843A00C4B1CE /* PwaveDetection.h */,
+				F42F09DC1AD58F3C004E996C /* QRSDET.CPP */,
+			);
+			path = ArrhythmiaDetection;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F430E8BB1AD0838000C4B1CE /* ArrhythmiaDetection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F430E8C31AD0838000C4B1CE /* Build configuration list for PBXNativeTarget "ArrhythmiaDetection" */;
+			buildPhases = (
+				F430E8B81AD0838000C4B1CE /* Sources */,
+				F430E8B91AD0838000C4B1CE /* Frameworks */,
+				F430E8BA1AD0838000C4B1CE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArrhythmiaDetection;
+			productName = ArrhythmiaDetection;
+			productReference = F430E8BC1AD0838000C4B1CE /* ArrhythmiaDetection */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F430E8B41AD0838000C4B1CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Abdulrahman;
+				TargetAttributes = {
+					F430E8BB1AD0838000C4B1CE = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = F430E8B71AD0838000C4B1CE /* Build configuration list for PBXProject "ArrhythmiaDetection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F430E8B31AD0838000C4B1CE;
+			productRefGroup = F430E8BD1AD0838000C4B1CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F430E8BB1AD0838000C4B1CE /* ArrhythmiaDetection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F430E8B81AD0838000C4B1CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F42F09DD1AD58F3C004E996C /* QRSDET.CPP in Sources */,
+				F430E8C81AD083F800C4B1CE /* ArrhythmiaClassification.cpp in Sources */,
+				F430E8CB1AD0843A00C4B1CE /* PwaveDetection.cpp in Sources */,
+				F435EE8C1AD15FFA0060CBF1 /* fileHandling.cpp in Sources */,
+				F430E8C01AD0838000C4B1CE /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F430E8C11AD0838000C4B1CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F430E8C21AD0838000C4B1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F430E8C41AD0838000C4B1CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F430E8C51AD0838000C4B1CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F430E8B71AD0838000C4B1CE /* Build configuration list for PBXProject "ArrhythmiaDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F430E8C11AD0838000C4B1CE /* Debug */,
+				F430E8C21AD0838000C4B1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F430E8C31AD0838000C4B1CE /* Build configuration list for PBXNativeTarget "ArrhythmiaDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F430E8C41AD0838000C4B1CE /* Debug */,
+				F430E8C51AD0838000C4B1CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F430E8B41AD0838000C4B1CE /* Project object */;
+}
