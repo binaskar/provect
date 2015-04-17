@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+void tWaveDetection();
+void pWaveDetection();
 #endif /* defined(__ArrhythmiaDetection__PwaveDetection__) */

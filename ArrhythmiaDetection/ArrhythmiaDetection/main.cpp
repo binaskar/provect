@@ -23,6 +23,8 @@ int QRSDet(int dataum, int init);
 void checkTachycardiaBradycardia ();
 void RDetection();
 void timeSignalWriter();
+void AnalyzeBeat(int *beat, int *onset, int *offset,
+                 int *isoLevel, int *beatBegin, int *beatEnd, int *amp) ;
 
 int main(int argc, const char * argv[]) {
     

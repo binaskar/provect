@@ -12,7 +12,7 @@ void checkQRSBasedArrhythmia  ();
 void checkQRSTBasedArrhythmia ();
 void checkPQRSTBasedArrhythmia();
 void checkTachycardiaBradycardia ();
-
+void timeBasedDetection();
 
 
 void checkTachycardiaBradycardia (){
