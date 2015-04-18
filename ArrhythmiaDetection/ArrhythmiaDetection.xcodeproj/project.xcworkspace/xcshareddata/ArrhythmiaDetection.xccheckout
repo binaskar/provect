@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>526512AF-BFFF-451C-B694-29FA4CA0EB0C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ArrhythmiaDetection</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5D443F32AA24C65D817143680E1C6D1A9463BB29</key>
 		<string>https://github.com/binaskar/provect.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ArrhythmiaDetection/ArrhythmiaDetection.xcodeproj</string>
+	<string>ArrhythmiaDetection/ArrhythmiaDetection.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5D443F32AA24C65D817143680E1C6D1A9463BB29</key>
