@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 
     String time="",id="",dataLow1="",dataHigh1="",dataLow2="",dataHigh2="";
 
-    String url="http://192.168.100.9/sensor/test1.php";
+    String url="http://192.168.100.30/sensor/test1.php";
     JSONObject json = new JSONObject();
 
     @Override
@@ -172,9 +172,9 @@ public class MainActivity extends Activity {
                 jHigh2.put(sHigh2[i]);
             }
 
-            json.put("PatientName", "103");
+            json.put("PatientName", "100");
             json.put("id",jId);
-            json.put("time", jTime);
+            json.put("sTime", jTime);
             json.put("low1", jLow1);
             json.put("high1", jHigh1);
             json.put("low2", jLow2);
@@ -224,7 +224,8 @@ public class MainActivity extends Activity {
                 String resFromServer = org.apache.http.util.EntityUtils.toString(response.getEntity());
 
                 jsonResponse=new JSONObject(resFromServer);
-                Log.i("Response from server", jsonResponse.toString());
+                JSONArray jEl=jsonResponse.getJSONArray("sTime");
+                Log.i("Response from server", jEl.getString(1));
             } catch (Exception e) { e.printStackTrace();}
             pDialog.dismiss();
             return jsonResponse;
