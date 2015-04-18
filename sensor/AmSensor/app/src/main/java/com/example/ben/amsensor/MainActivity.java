@@ -173,6 +173,7 @@ public class MainActivity extends Activity {
             }
 
             json.put("PatientName", "103");
+            json.put("id",jId);
             json.put("time", jTime);
             json.put("low1", jLow1);
             json.put("high1", jHigh1);
