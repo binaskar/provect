@@ -5,6 +5,7 @@ if( isset($_POST["json"]) ) {
      //Files Required
      //arrhthmyia Detector
      //file Handling
+     require_once __DIR__ . '/fileHandling';
      //
   
      //$data->PatientName =;
@@ -15,7 +16,7 @@ if( isset($_POST["json"]) ) {
 	 	
 	 	
 		insertSatanard($sTime,$id,$high,$low);	
-		insertDB($sTime,$id,$high,$low);
+		//insertDB($sTime,$id,$high,$low);
 	 }
 	 $data->PatientName = "100";
 	 echo json_encode($data);
