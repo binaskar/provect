@@ -80,8 +80,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
-        android:id="@+id/bSend"
+        android:text="Read file"
+        android:id="@+id/bRead"
         android:layout_below="@+id/radioGroup"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false" />
@@ -92,7 +92,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Respnse"
         android:id="@+id/tvRespnse"
-        android:layout_below="@+id/bSend"
+        android:layout_below="@+id/bRead"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/bSend"
+        android:layout_below="@+id/radioGroup"
+        android:layout_toEndOf="@+id/bRead" />
 
 </RelativeLayout>

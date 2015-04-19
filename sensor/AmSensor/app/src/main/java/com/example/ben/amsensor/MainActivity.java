@@ -40,14 +40,14 @@ public class MainActivity extends Activity {
     ProgressDialog pDialog;
     TextView respons;
     EditText start,end,min;
-    Button send;
+    Button send,read;
     RadioButton bytime,byarray;
 
     String time="",id="",dataLow1="",dataHigh1="",dataLow2="",dataHigh2="";
-
-    String url="http://192.168.100.30/sensor/test1.php";
+    int count=0;
+    String url="http://192.168.100.5/sensor2/mytest1.php";
     JSONObject json = new JSONObject();
-
+    JSONArray jLine=new JSONArray();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,14 @@ public class MainActivity extends Activity {
         byarray=(RadioButton)findViewById(R.id.rbByarray);
         bytime=(RadioButton)findViewById(R.id.rbBytime);
 
+        read=(Button) findViewById(R.id.bRead);
+        read.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readFile();
+                preData();
+            }
+        });
 
         send=(Button) findViewById(R.id.bSend);
         send.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +75,7 @@ public class MainActivity extends Activity {
               /*
 
             */
-                readFile();
-                preData();
+
                 try {
 
                     json.put("msg", "hello");
@@ -100,7 +107,7 @@ public class MainActivity extends Activity {
             int e = Integer.parseInt(end.getText().toString());
             int secEnd = Integer.parseInt(min.getText().toString()) * 60;
             int secStart = (Integer.parseInt(min.getText().toString()) - 1) * 60;
-
+            count=0;
             while ((inputString = reader.readLine()) != null) {
                 String[] d = inputString.split("\t");
 
@@ -108,14 +115,20 @@ public class MainActivity extends Activity {
 
 
                     if (i >= s && i <= e) {
-                        stringBuffer.append(d[0] + "\n");
-                        time += d[0] + " ";
+                       //stringBuffer.append(inputString + "\n");
+
+                       /*
+                         time += d[0] + " ";
                         id += d[1] + " ";
                         dataLow1 += d[2] + " ";
                         dataHigh1 += d[3] + " ";
                         dataLow2 += d[4] + " ";
-                        dataHigh2 += d[5] + " ";
+                        dataHigh2 += d[5] + " ";*/
+                        String line=d[0]+" "+d[1]+" "+d[4];
+                        jLine.put(line);
 
+
+                        count++;
                     } else if (i > e) {
                         break;
                     }
@@ -123,23 +136,28 @@ public class MainActivity extends Activity {
 
                     i++;
 
-                } else if (bytime.isChecked()) {
+                }
+                else if (bytime.isChecked()) {
 
                     if (Double.parseDouble(d[0]) <= secEnd && Double.parseDouble(d[0]) >= secStart) {
 
-                        time += d[0] + " ";
+                        /*time += d[0] + " ";
                         id += d[1] + " ";
                         dataLow1 += d[2] + " ";
                         dataHigh1 += d[3] + " ";
                         dataLow2 += d[4] + " ";
-                        dataHigh2 += d[5] + " ";
+                        dataHigh2 += d[5] + " ";*/
+                        String line=d[0]+" "+d[1]+" "+d[4];
+                        jLine.put(line);
+
+                        count++;
                     } else {
                         break;
                     }
                 }
             }
 
-            Log.v("data: ", time +"\n"+id);
+           // Log.v("data: ", time +"\n"+id);
                 //   respons.setText(id);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -149,7 +167,7 @@ public class MainActivity extends Activity {
     }
 
     public void preData(){
-        String[] sTime=time.split(" ");
+       /* String[] sTime=time.split(" ");
         String[] sId=id.split(" ");
         String[] sLow1=dataLow1.split(" ");
         String[] sHigh1=dataHigh1.split(" ");
@@ -171,15 +189,17 @@ public class MainActivity extends Activity {
                 jLow2.put(sLow2[i]);
                 jHigh2.put(sHigh2[i]);
             }
-
-            json.put("PatientName", "100");
-            json.put("id",jId);
+*/
+        try{
+            json.put("PatientName", "101");
+            json.put("lineData",jLine);
+            /*json.put("id",jId);
             json.put("sTime", jTime);
             json.put("low1", jLow1);
             json.put("high1", jHigh1);
             json.put("low2", jLow2);
             json.put("high2", jHigh2);
-
+            json.put("size",count);*/
 
             // JSONObject object=request.requestToPHP(url,"POST",post);
 
@@ -224,8 +244,8 @@ public class MainActivity extends Activity {
                 String resFromServer = org.apache.http.util.EntityUtils.toString(response.getEntity());
 
                 jsonResponse=new JSONObject(resFromServer);
-                JSONArray jEl=jsonResponse.getJSONArray("sTime");
-                Log.i("Response from server", jEl.getString(1));
+
+                Log.i("Response from server", "Response: "+jsonResponse.toString());
             } catch (Exception e) { e.printStackTrace();}
             pDialog.dismiss();
             return jsonResponse;
