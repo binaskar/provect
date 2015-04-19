@@ -1,0 +1,4 @@
+Timer Report For Record [103] :-
+QRS Detection Time =	3.000000s
+ARR Detection Time =	1.000000s
+Total Time =	4572904s
