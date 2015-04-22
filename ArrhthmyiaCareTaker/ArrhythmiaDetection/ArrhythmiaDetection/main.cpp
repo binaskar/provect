@@ -46,7 +46,7 @@ int main(int argc, const char * argv[]) {
     int QRSPeak[1000];
     int ids[1000];
     double times[1000];
-    
+    stringstream convert;
     const clock_t timer = clock();
     while (timedSignal>>a>>b>>c) {
        
@@ -65,13 +65,23 @@ int main(int argc, const char * argv[]) {
                 
                 QRSPeak[i-qrsDelay] = signals[i-qrsDelay];
                 for (int j=0; j<i; j++) {
-                    s = to_string(ids[j]);
+                    //s = to_string(ids[j]);
+                    
+					
+					convert << ids[j];
+			  		s= convert.str();
                     signal << s <<"\t";
-                    s = to_string(times[j]);
+                    //s = to_string(times[j]);
+                    convert << times[j];
+			  		s= convert.str();
                     signal << s << "\t";
-                    s = to_string(signals[j]);
+                    //s = to_string(signals[j]);
+                    convert << signals[j];
+			  		s= convert.str();
                     signal<<s<<"\t";
-                    s = to_string(QRSPeak[j]);
+                    //s = to_string(QRSPeak[j]);
+                    convert << QRSPeak[j];
+			  		s= convert.str();
                     signal<<s<<"\n";
                 }
                 i=0;
