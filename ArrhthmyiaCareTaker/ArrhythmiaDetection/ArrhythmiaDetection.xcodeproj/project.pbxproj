@@ -12,6 +12,14 @@
 		F430E8C81AD083F800C4B1CE /* ArrhythmiaClassification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F430E8C61AD083F800C4B1CE /* ArrhythmiaClassification.cpp */; };
 		F430E8CB1AD0843A00C4B1CE /* PwaveDetection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */; };
 		F435EE8C1AD15FFA0060CBF1 /* fileHandling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */; };
+		F436E7721AE7E3FE00B58825 /* NOISECHK.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F436E7711AE7E3FE00B58825 /* NOISECHK.CPP */; };
+		F436E7741AE7E75100B58825 /* CLASSIFY.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F436E7731AE7E75100B58825 /* CLASSIFY.CPP */; };
+		F4466FA01AE7DE98006CF31B /* MATCH.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F4466F9E1AE7DE98006CF31B /* MATCH.CPP */; };
+		F4466FA81AE7DF76006CF31B /* POSTCLAS.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F4466FA31AE7DF76006CF31B /* POSTCLAS.CPP */; };
+		F4466FA91AE7DF76006CF31B /* RYTHMCHK.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F4466FA51AE7DF76006CF31B /* RYTHMCHK.CPP */; };
+		F44FABC41AE42B2E00ACE82F /* QRSFILT.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F44FABC31AE42B2E00ACE82F /* QRSFILT.CPP */; };
+		F44FABC81AE42B4100ACE82F /* ANALBEAT.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F44FABC71AE42B4100ACE82F /* ANALBEAT.CPP */; };
+		F44FABCC1AE42BA800ACE82F /* BDAC.CPP in Sources */ = {isa = PBXBuildFile; fileRef = F44FABCA1AE42BA800ACE82F /* BDAC.CPP */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +43,24 @@
 		F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PwaveDetection.cpp; sourceTree = "<group>"; };
 		F430E8CA1AD0843A00C4B1CE /* PwaveDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwaveDetection.h; sourceTree = "<group>"; };
 		F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileHandling.cpp; sourceTree = "<group>"; };
+		F436E7711AE7E3FE00B58825 /* NOISECHK.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NOISECHK.CPP; sourceTree = "<group>"; };
+		F436E7731AE7E75100B58825 /* CLASSIFY.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLASSIFY.CPP; sourceTree = "<group>"; };
+		F4466F9E1AE7DE98006CF31B /* MATCH.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MATCH.CPP; sourceTree = "<group>"; };
+		F4466F9F1AE7DE98006CF31B /* MATCH.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MATCH.H; sourceTree = "<group>"; };
+		F4466FA11AE7DF76006CF31B /* ECGCODES.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ECGCODES.H; sourceTree = "<group>"; };
+		F4466FA21AE7DF76006CF31B /* ECGMAP.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ECGMAP.H; sourceTree = "<group>"; };
+		F4466FA31AE7DF76006CF31B /* POSTCLAS.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = POSTCLAS.CPP; sourceTree = "<group>"; };
+		F4466FA41AE7DF76006CF31B /* POSTCLAS.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = POSTCLAS.H; sourceTree = "<group>"; };
+		F4466FA51AE7DF76006CF31B /* RYTHMCHK.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RYTHMCHK.CPP; sourceTree = "<group>"; };
+		F4466FA61AE7DF76006CF31B /* RYTHMCHK.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RYTHMCHK.H; sourceTree = "<group>"; };
+		F4466FA71AE7DF76006CF31B /* WFDB.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WFDB.H; sourceTree = "<group>"; };
+		F44FABC21AE42B1F00ACE82F /* qrsdet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qrsdet.h; sourceTree = "<group>"; };
+		F44FABC31AE42B2E00ACE82F /* QRSFILT.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QRSFILT.CPP; sourceTree = "<group>"; };
+		F44FABC51AE42B3900ACE82F /* fileHandling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileHandling.cpp; sourceTree = "<group>"; };
+		F44FABC71AE42B4100ACE82F /* ANALBEAT.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ANALBEAT.CPP; sourceTree = "<group>"; };
+		F44FABC91AE42B4500ACE82F /* ANALBEAT.H */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ANALBEAT.H; sourceTree = "<group>"; };
+		F44FABCA1AE42BA800ACE82F /* BDAC.CPP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BDAC.CPP; sourceTree = "<group>"; };
+		F44FABCB1AE42BA800ACE82F /* BDAC.H */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BDAC.H; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +93,31 @@
 		F430E8BE1AD0838000C4B1CE /* ArrhythmiaDetection */ = {
 			isa = PBXGroup;
 			children = (
-				F430E8BF1AD0838000C4B1CE /* main.cpp */,
-				F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */,
+				F44FABC71AE42B4100ACE82F /* ANALBEAT.CPP */,
+				F44FABC91AE42B4500ACE82F /* ANALBEAT.H */,
 				F430E8C61AD083F800C4B1CE /* ArrhythmiaClassification.cpp */,
 				F430E8C71AD083F800C4B1CE /* ArrhythmiaClassification.h */,
+				F44FABCA1AE42BA800ACE82F /* BDAC.CPP */,
+				F44FABCB1AE42BA800ACE82F /* BDAC.H */,
+				F436E7731AE7E75100B58825 /* CLASSIFY.CPP */,
+				F4466FA11AE7DF76006CF31B /* ECGCODES.H */,
+				F4466FA21AE7DF76006CF31B /* ECGMAP.H */,
+				F435EE8B1AD15FFA0060CBF1 /* fileHandling.cpp */,
+				F430E8BF1AD0838000C4B1CE /* main.cpp */,
+				F436E7711AE7E3FE00B58825 /* NOISECHK.CPP */,
+				F4466F9E1AE7DE98006CF31B /* MATCH.CPP */,
+				F4466F9F1AE7DE98006CF31B /* MATCH.H */,
+				F4466FA31AE7DF76006CF31B /* POSTCLAS.CPP */,
+				F4466FA41AE7DF76006CF31B /* POSTCLAS.H */,
 				F430E8C91AD0843A00C4B1CE /* PwaveDetection.cpp */,
 				F430E8CA1AD0843A00C4B1CE /* PwaveDetection.h */,
 				F42F09DC1AD58F3C004E996C /* QRSDET.CPP */,
+				F44FABC21AE42B1F00ACE82F /* qrsdet.h */,
+				F44FABC31AE42B2E00ACE82F /* QRSFILT.CPP */,
+				F4466FA51AE7DF76006CF31B /* RYTHMCHK.CPP */,
+				F4466FA61AE7DF76006CF31B /* RYTHMCHK.H */,
+				F4466FA71AE7DF76006CF31B /* WFDB.H */,
+				F44FABC51AE42B3900ACE82F /* fileHandling.cpp */,
 			);
 			path = ArrhythmiaDetection;
 			sourceTree = "<group>";
@@ -104,7 +148,7 @@
 		F430E8B41AD0838000C4B1CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Abdulrahman;
 				TargetAttributes = {
 					F430E8BB1AD0838000C4B1CE = {
@@ -135,10 +179,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42F09DD1AD58F3C004E996C /* QRSDET.CPP in Sources */,
+				F436E7721AE7E3FE00B58825 /* NOISECHK.CPP in Sources */,
 				F430E8C81AD083F800C4B1CE /* ArrhythmiaClassification.cpp in Sources */,
 				F430E8CB1AD0843A00C4B1CE /* PwaveDetection.cpp in Sources */,
+				F4466FA91AE7DF76006CF31B /* RYTHMCHK.CPP in Sources */,
+				F4466FA81AE7DF76006CF31B /* POSTCLAS.CPP in Sources */,
+				F436E7741AE7E75100B58825 /* CLASSIFY.CPP in Sources */,
+				F44FABC41AE42B2E00ACE82F /* QRSFILT.CPP in Sources */,
 				F435EE8C1AD15FFA0060CBF1 /* fileHandling.cpp in Sources */,
+				F44FABC81AE42B4100ACE82F /* ANALBEAT.CPP in Sources */,
 				F430E8C01AD0838000C4B1CE /* main.cpp in Sources */,
+				F44FABCC1AE42BA800ACE82F /* BDAC.CPP in Sources */,
+				F4466FA01AE7DE98006CF31B /* MATCH.CPP in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

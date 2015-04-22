@@ -14,28 +14,43 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <algorithm>
+#include <iterator>
+#include <vector>
+#include <ostream>
+#include "BDAC.H"
+//#include "ANALBEAT.H"
 
 using namespace std;
 
-//int QRSFilter(int datum,int init);
-//int Peak( int datum, int init );
+//int *onset=0 ;
+//int *offset=0 ;
+//int *isoLevel=0 ;
+//int *beatBegin=0 ;
+//int *beatEnd=0;
+//int *amp=0;
+int QRSFilter(int datum,int init);
+int Peak( int datum, int init );
 int QRSDet(int dataum, int init);
-void checkTachycardiaBradycardia ();
+void checkTachycardiaBradycardia (string patientName);
 void RDetection();
 void timeSignalWriter();
 void AnalyzeBeat(int *beat, int *onset, int *offset,
                  int *isoLevel, int *beatBegin, int *beatEnd, int *amp) ;
 
+
+
 int main(int argc, const char * argv[]) {
     
     ofstream signal("QRSDelay.txt");
     ofstream timerReport("timeReport.txt");
-    
+    ofstream beatAnalysis("AnalyzeBeat");
+    //cout<<"Working4";
     
     timeSignalWriter();
-    
-    ifstream timedSignal("timedSignal.txt");
-    
+    string  patientName = argv[1];
+    ifstream timedSignal(patientName+"_data.txt");
+    //ifstream timedSignal("timedSignal.txt");
     bool start = false;
     double a , c ;
     double b;
@@ -46,8 +61,14 @@ int main(int argc, const char * argv[]) {
     int QRSPeak[1000];
     int ids[1000];
     double times[1000];
-    
+    //int *beat;
+    //beat= new int[BEAT_MS100];
+    //for (int i=0; i<BEAT_MS100; i++) {
+      //  beat[i]=0;
+    //}
+   
     const clock_t timer = clock();
+    //cout<<"Working3";
     while (timedSignal>>a>>b>>c) {
        
         if (init) {
@@ -56,8 +77,19 @@ int main(int argc, const char * argv[]) {
         }
         
         int qrsDelay = QRSDet(c, init);
+        //cout<<"Working1";
+        //beat[0] = c;
+        //cout<<"Working2";
+        //AnalyzeBeat(beat, onset, offset, isoLevel, beatBegin, beatEnd, amp);
+        //rotate(beat,beat+1, beat+100);
+        //rotate(<#_ForwardIterator __first#>, <#_ForwardIterator __middle#>, <#_ForwardIterator __last#>)
+        
+        //beatAnalysis << to_string(b)<<"\t" << to_string(*beatBegin)<<"\t"<<to_string(*beatEnd)<<"\t"<<to_string(*onset)<<"\t"<<to_string(*offset)<<"\n";
+        //cout<<*beatBegin<<"\t"<<*beatEnd<<"\n";
+        
         if (qrsDelay) {
             start = true;
+            
         }
         
         if (start) {
@@ -111,7 +143,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     float detectionTime = float((clock() - timer)/CLOCKS_PER_SEC);
-    checkTachycardiaBradycardia ();
+    checkTachycardiaBradycardia (patientName);
     float arrthmieaDTime = float((clock() - timer)/CLOCKS_PER_SEC) - detectionTime ;
     timerReport << "Timer Report For Record [103] :-\n";
     timerReport << "QRS Detection Time =\t"<<to_string(detectionTime)<<"s\n";
@@ -120,7 +152,7 @@ int main(int argc, const char * argv[]) {
     
     signal.close();
     timerReport.close();
-    RDetection();
+    //RDetection();
     
     return 0;
 }
