@@ -48,7 +48,7 @@ int main(int argc, const char * argv[]) {
     //cout<<"Working4";
     
     timeSignalWriter();
-    string  patientName = argv[1];
+    string  patientName_data = argv[1];
     ifstream timedSignal(patientName+"_data.txt");
     //ifstream timedSignal("timedSignal.txt");
     bool start = false;
@@ -143,7 +143,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     float detectionTime = float((clock() - timer)/CLOCKS_PER_SEC);
-    checkTachycardiaBradycardia (patientName);
+    checkTachycardiaBradycardia (patientName_result);
     float arrthmieaDTime = float((clock() - timer)/CLOCKS_PER_SEC) - detectionTime ;
     timerReport << "Timer Report For Record [103] :-\n";
     timerReport << "QRS Detection Time =\t"<<to_string(detectionTime)<<"s\n";
