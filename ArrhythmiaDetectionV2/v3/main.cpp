@@ -60,7 +60,7 @@ int main() {
     int qrsid;
     int data[size],id[size],oldData[size];
 	double time[size];
-    int a, b, c , i=0,maxR=0,countQRS=0;
+    int  i=0,maxR=0,countQRS=0;
     bool qrs=false,noqrs=false,startqrs=false;
     double stfQRS=0;
     double current=0, next=0, previos=0;
@@ -70,7 +70,7 @@ int main() {
         istringstream iss(line);
     	int a, c;
     	double b;
-    	if (!(iss >> a >> b>>c)) { cout<<"does not work\n";break; }
+    	if (!(iss >> a >> b>>c)) { cout<<"Done!\n";break; }
 		
         
 		oldData[i]=c;
@@ -175,13 +175,15 @@ int main() {
     }
     
     ifstream readData("byMean.txt");
-        ofstream xorData("last.txt");
-        while(readData>>a>>b>>c){
-        	if(c!=0){
-        		xorData<<a<<"\t"<<b<<"\t"<<c<<"\t"<<b<<"\n";
-			}else{
-				xorData<<a<<"\t"<<b<<"\t"<<c<<"\t"<<"0"<<"\n";
-			}
+    ofstream xorData("last.txt");
+    int a, b, c ;
+    while(readData>>a>>b>>c){
+    
+    	if(c==0){
+    		xorData<<a<<"\t"<<b<<"\t"<<c<<"\t"<<b<<"\n";
+		}else {
+			xorData<<a<<"\t"<<b<<"\t"<<c<<"\t"<<0<<"\n";
+		}
 			
 		}
    
