@@ -1,0 +1,25 @@
+Android application:
+after adding new patient to listView (update ListView Problem)
+draw ECG
+
+Database:
+3 table for caretake,patient, sensor
+caretaker: caretakerId,caretakerName,password,email,
+patient: patientId,patientName,sensorId,state,activity,arrhythmia,
+sensor: sensorId,sensorSeriel,frequency,format,location
+
+Server:
+between android and server
+Tips: send tips to android application
+send data for draw ecg
+
+between sensor and server
+transform data to mitbih format
+hierarchical algorithm after read result
+
+Simulator sensor:
+
+Hierarchical algorithm:
+_resutl.txt give long QRS and number of qrs
+still has accuore for detect QRS less then 90% (total)
+also does not detect 100% form start to end QRS (single QRS)
