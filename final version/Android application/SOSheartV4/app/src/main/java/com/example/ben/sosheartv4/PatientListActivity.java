@@ -36,7 +36,7 @@ public class PatientListActivity extends Activity {
     private ProgressDialog pDialog;
     HttpRequest request=new HttpRequest();
     //put your addrese
-    String url="http://192.168.100.18/Real2/patient_list.php",userName;
+    String url="http://192.168.100.7/Real3/patient_list.php",userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,28 +65,9 @@ public class PatientListActivity extends Activity {
     public void ActionPatientListActivity(View v){
         switch (v.getId()){
             case R.id.aplBAddNewPatient:
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                //alert.setTitle("connecting");
-                alert.setMessage("Who patient are you caring him\\her?");
-                // Set an EditText view to get user input
-                final EditText input = new EditText(this);
-                alert.setView(input);
-                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        String patientName = input.getText().toString();
-                        // Do something with value!
-                        //send value to service
-                        new PatientListActivityAsyncTask().execute("care",userName,patientName);
-                        //SystemClock.sleep(7000);
-                        //new PatientListActivityAsyncTask().execute("list",userName);
-                    }
-                });
-                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // Canceled.
-                    }
-                });
-                alert.show();
+                Intent intent=new Intent(context,FollowPatientActivity.class);
+                intent.putExtra("name",userName);
+                startActivity(intent);
                 break;
         }
     }
@@ -130,26 +111,12 @@ public class PatientListActivity extends Activity {
                             Patient patient = new Patient();
                             JSONObject jReal = jArray.getJSONObject(i);
                             patient.setPatinetName(jReal.getString("pUserName"));
-                            patient.setState(jReal.getString("currentStatus"));
+                            patient.setState(jReal.getString("state"));
                             patientList.add(patient);
                         }
                         return params[0];
                     }else{
                         return "";
-                    }
-                }else if(params[0].equals("care")){
-                    post.add(new BasicNameValuePair("patientName", params[2]));
-                    Log.d("Single POST CARE  Deta:", post.toString());
-                    JSONObject jObj=request.requestToPHP(url,"POST",post);
-                    Log.d("Single JSON Details", jObj.toString());
-                    if(jObj.getInt("success")==1){
-                        Patient patient = new Patient();
-                        patient.setPatinetName(jObj.getString("pUserName"));
-                        patient.setState(jObj.getString("currentStatus"));
-                        patientList.add(patient);
-                        return params[0];
-                    }else{
-                        return "Reject";
                     }
                 }
             } catch (JSONException e) {
@@ -168,13 +135,6 @@ public class PatientListActivity extends Activity {
             if(s.equals("list")){
 
                 listView.setAdapter(adapter);
-            }else if(s.equals("care")) {
-                adapter.notifyDataSetChanged();
-
-                listView.refreshDrawableState();
-
-            }else if(s.equals("Reject")){
-                callAlert("Reject","Patient name is incorrect");
             }
         }
     }

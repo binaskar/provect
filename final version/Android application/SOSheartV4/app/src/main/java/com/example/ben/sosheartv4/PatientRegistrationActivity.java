@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -22,60 +23,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RegistrationActivity extends Activity {
-    EditText user,pass1,pass2,email1,email2;
-    String url="http://192.168.100.7/Real3/Regsitration.php";
+public class PatientRegistrationActivity extends Activity {
+    EditText patient,caretaker,sensor;
+    String url="http://192.168.100.7/Real3/RegsitrationPatient.php";
     private ProgressDialog pDialog;
     HttpRequest request=new HttpRequest();
-    //JSONParser jParser=new JSONParser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
-        user=(EditText) findViewById(R.id.arETUserName);
-        pass1=(EditText) findViewById(R.id.arETPassword1);
-        pass2=(EditText) findViewById(R.id.arETPassword2);
-        email1=(EditText) findViewById(R.id.arETEmail1);
-        email2=(EditText) findViewById(R.id.arETEmail2);
-
+        setContentView(R.layout.activity_patient_registration);
+        patient=(EditText) findViewById(R.id.aprETPName);
+        caretaker=(EditText) findViewById(R.id.aprETCName);
+        sensor=(EditText) findViewById(R.id.aprETSName);
     }
 
 
-   public void ActionRegistrationActivity(View v){
-       switch (v.getId()){
-           case R.id.arBCancel:
-               finish();
-               break;
-           case R.id.arBRegistration:
-            if(isInputCorrect()){
-                //Send user,pass,email to server
-                new RegisAsyncTask().execute();
-            }
-               break;
-       }
-   }
+    public void ActionPR(View v){
+        switch (v.getId()){
+            case R.id.aprBCancel:
+                finish();
+                break;
+            case R.id.aprBRegistration:
+
+                Log.v("RegisPatiActi: ","in action method");
+                if(isInputCorrect()){
+                    //Send user,pass,email to server
+                    new RegisPatAsyncTask().execute();
+                }
+                break;
+        }
+    }
 
     public boolean isInputCorrect(){
-        String u=user.getText().toString();
-        String p1=pass1.getText().toString();
-        String p2=pass2.getText().toString();
-        String e1=email1.getText().toString();
-        String e2=email2.getText().toString();
+        Log.v("RegisPatiActi: ","in isInputCorrect method, p: "+patient.getText().toString()+" , c: "+caretaker.getText().toString()+" , s: "+sensor.getText().toString());
+        String p1=patient.getText().toString();
+        String c1=caretaker.getText().toString();
+        String s1=sensor.getText().toString();
 
-        if(u.length()>0){
-            if(p1.length()>=8&&e1.length()>=8){
-                if(e1.equals(e2)&&p1.equals(p2)){
+        Log.v("RegisPatiActi: ","in isInputCorrect method, p: "+p1+" , c: "+c1+" , s: "+s1);
+        if(p1.length()>0){
+            if(c1.length()>0){
+                if(s1.length()>0){
                     return true;
                 }else{
-                    callAlert("Error","Field are not equal to re-enter field");
+                    callAlert("Error","You don\'t enter any character in sensor name");
                     return false;
                 }
             }else{
-                callAlert("Error","Some Field are less 8 character");
+                callAlert("Error","You don\'t enter any character in caretaker name");
                 return false;
             }
         }else{
-            callAlert("Error","You don\'t enter any character in user name ");
+            callAlert("Error","You don\'t enter any character in patient name ");
             return false;
         }
 
@@ -98,10 +97,10 @@ public class RegistrationActivity extends Activity {
 
     }
 
-    public class RegisAsyncTask extends AsyncTask<String,String ,String>{
+    public class RegisPatAsyncTask extends AsyncTask<String,String ,String> {
         @Override
         protected void onPreExecute() {
-            pDialog = new ProgressDialog(RegistrationActivity.this);
+            pDialog = new ProgressDialog(PatientRegistrationActivity.this);
             pDialog.setMessage("Connection To Server..");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -111,14 +110,14 @@ public class RegistrationActivity extends Activity {
         @Override
         protected String doInBackground(String... params) {
             List<NameValuePair> post=new ArrayList<>();
-            post.add(new BasicNameValuePair("name",user.getText().toString()));
-            post.add(new BasicNameValuePair("password",pass1.getText().toString()));
-            post.add(new BasicNameValuePair("email",email1.getText().toString()));
-            post.add(new BasicNameValuePair("type","careTaker"));
+            post.add(new BasicNameValuePair("patient",patient.getText().toString()));
+            post.add(new BasicNameValuePair("caretaker",caretaker.getText().toString()));
+            post.add(new BasicNameValuePair("sensor",sensor.getText().toString()));
+
             try {
-               // JSONObject jsonObject=jParser.makeHttpRequest(url,"POST",post);
+                // JSONObject jsonObject=jParser.makeHttpRequest(url,"POST",post);
                 JSONObject jsonObject=request.requestToPHP(url,"POST",post);
-                Log.v("respnse","JSON: "+jsonObject.toString());
+                Log.v("respnse", "JSON: " + jsonObject.toString());
                 if (jsonObject.getInt("success")==1){
                     return "Accept";
                 }else{
@@ -145,4 +144,5 @@ public class RegistrationActivity extends Activity {
 
         }
     }
+
 }

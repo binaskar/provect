@@ -7,4 +7,7 @@
     <string name="title_activity_patient_list">PatientListActivity</string>
     <string name="title_activity_patient_state">PatientStateActivity</string>
     <string name="title_activity_tips">TipsActivity</string>
+    <string name="title_activity_registration_patient">RegistrationPatientActivity</string>
+    <string name="title_activity_follow_patient">FollowPatientActivity</string>
+    <string name="title_activity_patient_registration">PatientRegistrationActivity</string>
 </resources>

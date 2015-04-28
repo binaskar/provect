@@ -40,7 +40,7 @@ public class PatientStateActivity extends Activity {
     ProgressDialog pDialog;
 
     HttpRequest request=new HttpRequest();
-    String url="http://192.168.100.18/Real2/detail.php";
+    String url="http://192.168.100.7/Real3/detail.php";
 
     LinearLayout chart;
     XYSeriesRenderer heartbeat;

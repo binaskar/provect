@@ -1,14 +1,16 @@
 Android application:
-after adding new patient to listView (update ListView Problem)
+after adding new patient to listView (update ListView Problem)(fixed)
+tipsActivity new problem
 draw ECG
 
 Database:
 3 table for caretake,patient, sensor
-caretaker: caretakerId,caretakerName,password,email,
-patient: patientId,patientName,sensorId,state,activity,arrhythmia,
+caretaker: caretakerId,caretakerName,password,email, (fixed)
+patient: patientId,patientName,sensorId,state,activity,arrhythmia,(fixed)
 sensor: sensorId,sensorSeriel,frequency,format,location
-
+tips: id,arrhythmia,tips (fixed)
 Server:
+make _data.txt in sensor file after registration in android application (new) in file real3
 between android and server
 Tips: send tips to android application
 send data for draw ecg
@@ -19,7 +21,7 @@ hierarchical algorithm after read result
 
 Simulator sensor:
 
-Hierarchical algorithm:
+Hierarchical algorithm:(not sure)
 _resutl.txt give long QRS and number of qrs
 still has accuore for detect QRS less then 90% (total)
 also does not detect 100% form start to end QRS (single QRS)

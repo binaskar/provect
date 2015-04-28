@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.ben.sosheartv4.PatientRegistrationActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
+    >
+
+    <TextView android:text="Patient Name" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Patient Name"
+        android:id="@+id/aprETPName"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who will caring the patient?"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Caretaker Name"
+        android:id="@+id/aprETCName"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensor"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sensor Name"
+        android:id="@+id/aprETSName"
+        android:gravity="center_horizontal"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/aprBCancel"
+            android:onClick="ActionPR"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration"
+            android:id="@+id/aprBRegistration"
+            android:onClick="ActionPR"/>
+        </LinearLayout>
+
+</LinearLayout>

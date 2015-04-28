@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     EditText user,pass;
     ProgressDialog pDialog;
     HttpRequest request=new HttpRequest();
-    String url="http://192.168.100.18/Real2/Login.php";
+    String url="http://192.168.100.7/Real3/Login.php";
     Context context=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,9 @@ public class MainActivity extends Activity {
            case R.id.amBLogin:
                new MAAsyncTask().execute();
                break;
-
+           case R.id.amBRegistrationPatient:
+               startActivity(new Intent(this,PatientRegistrationActivity.class));
+               break;
 
        }
    }

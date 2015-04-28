@@ -35,29 +35,30 @@
         android:password="true"
         android:textSize="25dp"
         android:layout_marginBottom="15dp"/>
-    <LinearLayout
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal|center_vertical">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registration"
-            android:onClick="ActionMainActivity"
-            android:layout_marginRight="20dp"
-            android:textSize="20dp"
-            android:id="@+id/amBRegistration"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:onClick="ActionMainActivity"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:id="@+id/amBLogin"/>
+        android:text="Login"
+        android:onClick="ActionMainActivity"
 
-        </LinearLayout>
+        android:textSize="20dp"
+        android:id="@+id/amBLogin"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration Caretaker"
+        android:onClick="ActionMainActivity"
+
+        android:textSize="20dp"
+        android:id="@+id/amBRegistration"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration Patient"
+        android:onClick="ActionMainActivity"
+
+        android:textSize="20dp"
+        android:id="@+id/amBRegistrationPatient"/>
 
 
 </LinearLayout>

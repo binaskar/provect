@@ -1,30 +1,31 @@
 <?php
     
    
+    
     // array for JSON response
     $response = array();
     
     // check for required fields
-    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['type'])) {
+    if (isset($_POST['patient']) && isset($_POST['caretaker']) && isset($_POST['sensor'])) {
         
-        $name = $_POST['name'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $type = $_POST['type'];
-
+        $patientName = $_POST['patient'];
+        $caretakerName = $_POST['caretaker'];
+        $sensor = $_POST['sensor'];
+        $state="healthy";
+		$activity="none";
+		$arrhythmia="none";
         // include db connect class
         require_once __DIR__ . '/db_connect.php';
         // connecting to db
         $db = new DB_CONNECT();
         //MySQL Quieries
         
-        
         //Insert
-        $quieryInsertCT = "INSERT INTO caretakertable (cUserName, password, email) VALUES('$name', '$password', '$email')";
+        $quieryInsertP  = "INSERT INTO patienttable   (pUserName, who_will_caring_patient, sensorName,state,activity,arrhythmia) VALUES('$patientName', '$caretakerName', '$sensor','$state','$activity','$arrhythmia')";
         //A Checker for Records Duplication
-		$searchCTQuery = "SELECT * FROM caretakertable  WHERE cUserName = '$name'";
+		$searchCTQuery = "SELECT * FROM patienttable  WHERE pUserName = '$patientName'";
   
-		//Check if User exist as caretaker
+		//Check if User exist as patient
 		$result=mysql_query($searchCTQuery);
         if(mysql_num_rows($result) > 0){
             $response["success"] = 0;
@@ -34,11 +35,12 @@
         }	else{//User Doesn't Exist
             
             
-            $result = mysql_query($quieryInsertCT);
+            $result = mysql_query($quieryInsertP);
             
             // check if row inserted or not
             if ($result) {
                 // successfully inserted into database
+				$file=fopen($patientName."_data.txt","w");
                 $response["success"] = 1;
                 $response["message"] = "Accept.";
                 

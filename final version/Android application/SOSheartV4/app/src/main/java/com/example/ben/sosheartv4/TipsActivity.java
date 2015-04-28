@@ -24,7 +24,7 @@ public class TipsActivity extends Activity {
     TextView arrhythmia,tips;
 
     HttpRequest request=new HttpRequest();
-    String url="http://192.168.100.18/Real2/tip.php",arr;
+    String url="http://192.168.100.7/Real3/tip.php",arr;
 
     ProgressDialog pDialog;
 
@@ -56,6 +56,7 @@ public class TipsActivity extends Activity {
             List<NameValuePair> post=new ArrayList<NameValuePair>();
             post.add(new BasicNameValuePair("arrhythmia",arr));
             try{
+                Log.d("JSON","Response:"+post.toString());
                 JSONObject jsonObject=request.requestToPHP(url,"POST",post);
                 Log.d("JSON","Response:"+jsonObject.toString());
                 if(jsonObject.getInt("success")==1){
